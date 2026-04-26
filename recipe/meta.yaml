@@ -1,5 +1,5 @@
 {% set name = "hashio" %}
-{% set version = "0.4.10" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 50684a17697e73c464c9ed16128eddc9b18e355afd40cbe69b7f9e230512a40e
+  sha256: c201e30f5d8036242a18c4be4e6ea9a24083fcc3d8a4a9d5483badf2ebfeac06
 
 build:
   noarch: python
@@ -36,7 +36,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }} 
+    - python {{ python_min }}
 
 about:
   summary: Custom file and directory checksum tool
