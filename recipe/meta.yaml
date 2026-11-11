@@ -1,16 +1,15 @@
 {% set name = "hashio" %}
-{% set version = "0.4.10" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 50684a17697e73c464c9ed16128eddc9b18e355afd40cbe69b7f9e230512a40e
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ef726472582092dbfb3c305c610ba67227fec1e03141055aff114fd07a8fd8ec
 
 build:
-  noarch: python
   number: 0
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -19,12 +18,14 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
-    - setuptools
+    - python
+    - setuptools >=61
+    - wheel
     - pip
   run:
-    - python >={{ python_min }}
-    - lxml ==5.3.0
+    - python
+    - lxml ==5.4.0  # [py<314]
+    - lxml ==6.0.4  # [py>=314]
     - tqdm ==4.67.1
     - python-xxhash ==3.5.0
 
@@ -36,13 +37,12 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }} 
 
 about:
   summary: Custom file and directory checksum tool
   home: http://github.com/rsgalloway/hashio
   dev_url: http://github.com/rsgalloway/hashio
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
 
 extra:
