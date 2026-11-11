@@ -4,3 +4,9 @@ github:
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
+
+# Keep all Python/platform variants on the feedstock's existing CI provider.
+provider:
+  linux_64: github_actions
+  osx_64: github_actions
+  win_64: github_actions

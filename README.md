@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hashio-feedstoc
 
 Home: http://github.com/rsgalloway/hashio
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Summary: Custom file and directory checksum tool
 
@@ -16,7 +16,7 @@ Current build status
 
 
 <table><tr>
-    <td>All platforms:</td>
+    <td>GitHub Actions</td>
     <td>
       <a href="https://github.com/conda-forge/hashio-feedstock/actions/workflows/conda-build.yml">
         <img src="https://github.com/conda-forge/hashio-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
